@@ -1,0 +1,102 @@
+/* 小屏 */
+main #img-box{
+    display: none;
+}
+main #text-box{
+    margin: 10px;
+}
+main #text-box #text-strip{
+
+}
+main #text-box #text-strip #caption{
+    font-size: 18px;
+    font-weight: bold;
+}
+main #text-box #text-strip #strip-img-box{
+    display: none;
+}
+main #text-box #text-strip p{
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+main #text-box #text-strip #middle-big-p{
+    display: none;
+}
+main #text-box #text-strip li{
+    margin-left: 20px;
+    font-size: 12px;
+}
+
+/* 中屏 */
+@media only screen and (min-width:660px){
+    body{
+        margin: 8px;
+    }
+    main{
+        position: relative;
+    }
+    main #img-box{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    main #img-box img{
+        width: 100%;
+        height: auto;
+    }
+    main #text-box::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+    main #text-box #text-strip{
+        width: 27%;
+        background-color: #A8BCB0;
+        margin: 10px;
+        float: left;
+        padding: 10px;
+    }
+    main #text-box #text-strip #caption{
+        text-align: center;
+    }
+    main #text-box #text-strip #strip-img-box{
+        display: block;
+        width: 99%;
+        border: #000 solid 1px;
+        clear: both;
+    }
+    main #text-box #text-strip #strip-img-box img{
+        width: 100%;
+        height: auto;
+    }
+    main #text-box #text-strip p{
+        
+    }
+    main #text-box #text-strip #small-p{
+        display: none;
+    }
+    main #text-box #text-strip #middle-big-p{
+        display: block;
+        width: 70%;
+        margin: 10px;
+        margin-bottom: 20px;
+        padding: 20px;
+        background-color: #E6E7E8;
+        border-top-right-radius: 100px;
+        border-bottom-right-radius: 100px;
+        border-bottom-left-radius: 100px;
+        box-shadow: 5px 10px 20px #333232;
+        clear: both;
+    }
+
+}
+/* 大屏 */
+@media only screen and (min-width:830px){
+    body{
+        margin: 0px;
+    }
+    main #text-box{
+        max-width: 1280px;
+        margin: auto;
+    }
+}

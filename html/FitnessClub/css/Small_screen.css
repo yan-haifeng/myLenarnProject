@@ -1,0 +1,69 @@
+    /* 小屏 */
+    
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    
+    body{
+        background-color: #1D1D1C;
+        margin: 8px;
+    }
+
+    body #container{
+        margin: auto;
+        width: 100%;
+    }
+    /* logo */
+    body #container header #logo{
+        width: 297px;
+        height: 220px;
+        margin: auto;
+    }
+
+    /* nav */
+    body #container header nav ul{
+    }
+    body #container header nav ul li{
+        display: block;
+        height: 30px;
+        width: 100%;
+        background-color:#9D9D93;
+        margin-bottom: 10px;
+        border-radius: 20px;
+        text-align: center;
+    }
+    body #container header nav ul li a{
+        width: 100%;
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        line-height: 30px;
+        font-weight: bolder;
+
+    }
+
+    /* main */
+    main{
+        width: 100%;
+        background-color: #E6E7E8;
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        margin-top: 20px; 
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+    
+    /* footer */
+    footer{
+        margin-top:30px;
+        font-size: 12px;
+        color: #fff;
+        clear: both;
+    }
+    footer p{
+        margin: auto;
+        text-align: center;
+    }
+
+

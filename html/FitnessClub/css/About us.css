@@ -1,0 +1,104 @@
+
+/* 小屏 */
+main #main-introduction{
+    height: 100%;
+    width: 97%;
+    margin: 10px;
+}
+
+main #main-introduction #caption{
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+main #main-introduction #img-text{
+
+}
+main #main-introduction #img-text #img{
+    display: none;
+}
+main #main-introduction #img-text #text{
+    margin-top: 10px;
+    font-size: 12px;
+}
+main #main-introduction #img-text #text ul{
+    margin-top: 10px;
+    list-style-type: disc;
+    margin-left: 30px;
+}
+main #main-common{
+    display: none;
+}
+
+/* 中屏 */
+@media only screen and (min-width:660px){
+    body{
+        margin: 8px;
+    }
+    main #main-introduction .box{
+        
+    }
+    main #main-introduction #img-text{
+        position: relative;
+        height: 150px;
+    }
+    main #main-introduction #img-text #img{
+        position: absolute;
+        display: block;
+        width: 25%;
+        max-height: 135px;
+        top:15px;
+    }
+    main #main-introduction #img-text #img img{
+        width: 100%;
+        height: auto;
+        max-height: 135px;
+        max-width: 182px;
+    }
+    main #main-introduction #img-text #text{
+        position: absolute;
+        width: 70%;
+        float: left;
+        left: 27%;
+    }
+
+    main #main-common{
+        display: block;
+        margin: 10px;
+    }
+    main #main-common #caption{
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    main #main-common p{
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    main #main-common .Coarser{
+        font-weight: bold;
+        margin-bottom: 0px;
+    }
+    main #main-common #mainText{
+        margin-left: 2em;
+    }
+}
+
+/* 大屏 */
+@media only screen and (min-width:830px){
+    *{
+        color: #fff;
+    }
+    body{
+        margin: 0px;
+    }
+    header{
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    main{
+        max-width: 1000px;
+        margin: auto;
+    }
+}

@@ -1,0 +1,155 @@
+
+/* 上 */
+main #main-top{
+    display: none;
+}
+/* 中 */
+main #main-middle{
+
+}
+main #main-middle #p-BoxSmall{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    margin-left: 20px;
+}
+main #main-middle #p-BoxSmall p{
+    margin-top: 10px;
+    width: 90%;
+    font-size: 14px;
+}
+main #main-middle #p-BoxSmall #p1{
+
+}
+main #main-middle #p-BoxSmall #p2{
+    font-size: 16px;
+    font-weight: bolder;
+}
+main #main-middle #p-BoxSmall #p3{
+    height: 25px;
+    width: 35%;
+    color:#fff;
+    font-weight: bold;
+    background-color:#9D9D93;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 20px;
+    min-width: 209px;
+}
+main #main-middle #p-BoxSmall #p4{
+    font-weight: bold;
+}
+main #main-middle #p-BoxSmall #p5{
+    list-style-type: none;
+}
+main #main-middle #p-BoxmiddleAndGig{
+    display: none;
+}
+/* 下 */
+main #main-bottom{
+    display: none;
+}
+
+/* 中屏 */
+@media only screen and (min-width:660px){
+    body{
+        margin: 8px;
+    }
+
+    main{
+        background-color: #E6E7E8;
+        padding:0px;
+    }
+
+    /* 上 */
+    main #main-top{
+        display: block;
+        width: 100%;
+    }
+    main #main-top img{
+        width: 100%;
+        height: auto;
+    }
+    /* 中 */
+    main #main-middle{
+    }
+    main #main-middle #p-BoxSmall{
+        display: none;
+    }
+    main #main-middle #p-BoxmiddleAndGig{
+        display: block;
+        padding: 20px;
+        margin: auto;
+        max-width: 830px;
+
+    }
+    main #main-middle #p-BoxmiddleAndGig p{
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    /* 下 */
+    main #main-bottom{
+        display: block;
+    }
+    main #main-bottom #Start-Today{
+
+    }
+    main #main-bottom #Start-Today p{
+        font-size: 35px;
+        font-weight: bold;
+        text-align: center;
+    }
+    main #main-bottom #imgVeiw{
+        max-width:830px;
+        width: 100%;
+        height: 200px;
+        margin: auto;
+    }
+    main #main-bottom #imgVeiw #Theimg{
+        width: 30%;
+        height: auto;
+        border: #1D1D1C solid 5px;
+        margin-right: 4px;
+        margin-left:  6px;
+        float: left;
+    }
+    main #main-bottom #imgVeiw img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* 大屏 */
+@media only screen and (min-width:830px){
+    body{
+        margin: 0px;
+    }
+    header{
+        max-width: 1000px;
+        margin: auto;
+    }
+    main{
+        background-color: #1D1D1C;
+    }
+    /* 上 */
+    /* 中 */
+    main #main-middle #p-BoxmiddleAndGig{
+        max-width: 1280px;
+    }
+    main #main-middle #p-BoxmiddleAndGig p{
+        color: #fff;
+    }
+    /* 下 */
+    main #main-bottom #imgVeiw{
+        max-width: 1280px;
+    }
+    main #main-bottom #imgVeiw::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+    main #main-bottom #Start-Today p{
+        color: #fff;
+    }
+}

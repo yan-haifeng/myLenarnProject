@@ -1,0 +1,128 @@
+/* 小屏 */
+main #all{
+    margin: 10px;
+}
+main #all #title{
+
+}
+main #all #title p{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+main #all #from #canvas-box{
+    display: none;
+}
+main #all #from #box{
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+main #all #from #top #box p{
+    display: block;
+}
+main #all #from #top #check{
+    margin-left: 2em;
+    margin-top: 10px;
+    
+}
+main #all #contact{
+    margin-top: 20px;
+}
+main #all #contact #p-title{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+main #all #contact #p-lianxi{
+    background-color: #9D9D93;
+    display: inline-block;
+    border-radius: 30px;
+    padding: 3px;
+}
+
+/* 中屏 */
+@media only screen and (min-width:660px){
+    body{
+        margin: 8px;
+    }
+    main #all #from #canvas-box{
+        display: none;
+    }
+    main #all #from #top{
+        width: 50%;
+        height: 300px;
+    }
+    main #all #from #top #box{
+        position: relative;
+    }
+    main #all #from #top #box #text{
+        position: absolute;
+        right: 0;
+    }
+    main #all #from #top #box p{
+        display: inline-block;
+    }
+    main #all #from #Bottom{
+        width: 50%;
+    }
+    main #all #from #Bottom #box{
+        position: relative;
+    }
+    main #all #from #Bottom #box p{
+        display: inline-block;
+    }
+    main #all #from #Bottom #box #p-top{
+        position: relative;
+        bottom: 50px;
+    }
+    main #all #from #Bottom #box textarea{
+        position: relative;
+    }
+    main #all #contact #p-lianxi{
+        display: inline;
+        background-color:rgba(0, 0, 0, 0);
+        border-radius: 0px;
+        padding:0px;
+    }
+    main #all #contact .xiahuaxian{
+        font-weight: bold;
+        text-decoration: underline;
+    }
+}
+
+/* 大屏 */
+@media only screen and (min-width:830px){
+    body{
+        margin: 0px;
+    }
+    main #all #from #canvas-box{
+        display: block;
+    }
+    main #all #from #box{
+        max-width:437px ;
+    }
+    main #all #from #top{
+        width: 100%;
+    }
+    main #all #from #Bottom{
+        width: 100%;
+    }
+    main #all #title p{
+        color: #fff;
+    }
+
+    main #all #from{
+        padding: 10px;
+        background-color: #fff;
+        color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    main #all form{
+        max-width: 900px;
+    }
+    main #all #contact{
+        color: #fff;
+    }
+}

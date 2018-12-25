@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/Small_screen.css">
+    <link rel="stylesheet" href="css/Middle_screen.css">
+    <link rel="stylesheet" href="css/Big_screen.css">
+    <link rel="stylesheet" href="css/Contact.css">
+    <title>Contact</title>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <div id="logo">
+                <img src="images/ffc_logo.png">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">家</a></li>
+                    <li><a href="About.html">关于我们</a></li>
+                    <li><a href="classes.html">类</a></li>
+                    <li><a href="nutrtion.html">营养</a></li>
+                    <li><a href="Contact.html">联系我们</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div id="all">
+                <div id="title">
+                   <p>准备好开始了吗？</p>
+                <p>填写下面的表格即可开始免费试用。</p>
+                </div>
+                <div id="from">
+                <form action="" method="get">
+                <div id="top">
+                    <div id="box"><p>名字：</p><input name="" type="text" id="text"></div>
+                    <div id="box"><p>姓： </p><input name="" type="text" id="text"></div>
+                    <div id="box"><p>电子邮件： </p><input name="" type="text" id="text"></div>
+                    <div id="box"><p>电话：</p><input name="" type="text" id="text"></div>
+                <p>我想了解更多信息：</p>
+                <div id="check">
+                    <div id="box"><p><input name="" type="checkbox" value="">团体健身</p></div>
+                    <div id="box"><p><input name="" type="checkbox" value="">个人培训</p></div>
+                    <div id="box"><p><input name="" type="checkbox" value="">营养</p></div>
+                </div>
+                </div>
+                <div id="Bottom">
+                    <div id="box">
+                        <p>引荐来源：</p>
+                        <select name="" id="">
+                        <option>广告</option>
+                        <option>朋友</option>
+                        <option>谷歌</option>
+                        <option>社会</option>
+                        <option>媒体</option>
+                        <option>其他</option>
+                        </select>
+                    </div>
+                    <div id="box">
+                        <p id="p-top">有问题吗？</p>
+                        <textarea name="" cols="30" rows="4"></textarea>
+                    </div>
+                    <div id="box"><p><input name="" type="button" value="提交"></p></div>
+                    <div id="box"><p><input name="" type="button" value="重置表格"></p></div>
+                </div>
+                </form>
+                <div id="canvas-box">
+                    <canvas width="200px" height="200px" id="clock10_">
+                        您的浏览器不支持 HTML5 canvas 标签。
+                    </canvas>
+                </div>
+                </div>
+                <div id="contact">
+                <p id="p-title"> 我们位于：<br/>
+                    25743 Bloom Court<br/>
+                    Locket, GA 85524</p>
+                <p id="p-title">电话号码：</p>
+                <p id="p-lianxi">(814) 555-9608</p>
+                <p id="p-title">电子邮件地址：</p>
+                <p id="p-lianxi" class="xiahuaxian">forwardfitness@club.net</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+                <p>版权所有严海峰.保留所有权利。</p>
+                <p>forwardfitness@club.net </p>
+        </footer>
+    </div>
+
+    <!-- JS -->
+    <script src="js/canvas_clock.js"></script>
+    <script>
+    clockd10_={
+			  "indicate": true,
+			  "indicate_color": "#222",
+			  "dial1_color": "#666600",
+			  "dial2_color": "#81812e",
+			  "dial3_color": "#9d9d5c",
+			  "time_add": 1,
+			  "time_24h": true,
+			  "track": "#4b4b00",
+             };
+             
+    var c = document.getElementById('clock10_');
+    cns10_ = c.getContext('2d');
+    clock_planets(200,cns10_,clockd10_);
+    </script>
+    
+    
+</body>
+</html>

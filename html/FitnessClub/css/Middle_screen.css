@@ -1,0 +1,39 @@
+/* 中屏 */
+@media only screen and (min-width:660px){
+    body{
+        
+        margin: 0px;
+    }
+
+    body #container{
+        width: 100%;
+    }
+
+    body #container header #logo{
+        width: 297px;
+        height: 220px;
+        margin: auto;
+    }
+
+    /* nav */
+    body #container header nav ul{
+        margin-right:8px ;
+    }
+    body #container header nav ul li{
+        background-color: #1D1D1C;
+        width: 20%;
+        margin-bottom: 0px;
+        border-radius: 0px;
+        float: left;
+    }
+
+    /* main */
+    main{
+        background-color: #E6E7E8;
+        border-top-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        clear: both;
+    }   
+
+
+}
