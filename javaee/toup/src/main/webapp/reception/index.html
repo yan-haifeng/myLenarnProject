@@ -1,0 +1,161 @@
+<!-- Toup概念网页模板 -->
+<!-- 作者：yhf -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Toup公司</title>
+    <link rel="stylesheet" href="css/Big_screen.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="js/jQuery.js"></script>
+    <script src="layui/layui.all.js"></script>
+    <script src="js/Tologin.js"></script>
+</head>
+
+<body id="myBody">
+    <header>
+        <div id="logo"><img src="Images/Logo/Logo.png" alt=""></div>
+        <nav id="Big-nav">
+            <ul id="Big-nav-ul">
+                <a href="index.html">
+                    <li>主页</li>
+                </a>
+                <a href="Services.html">
+                    <li>服务</li>
+                </a>
+                <a href="About.html">
+                    <li>关于</li>
+                </a>
+                <a href="Gallery.html">
+                    <li>商品</li>
+                </a>
+                <a href="founder.html">
+                    <li>团队</li>
+                </a>
+                <a href="#" id="a_login">
+                    <li id="li_login">登录</li>
+                </a>
+            </ul>
+        </nav>
+        <canvas id="nav-canvas"></canvas>
+    </header>
+    <!-- 编辑区域 -->
+    <main>
+        <div id="img-box">
+            <div id="banner_tabs" class="flexslider">
+                <ul class="slides">
+                    <li>
+                        <a title="" target="_blank" href="#">
+                            <img alt="" src="images/lunbo/alpha.png" id="banner1">
+                        </a>
+                    </li>
+                    <li>
+                        <a title="" href="#">
+                            <img alt="" src="images/lunbo/alpha.png" id="banner2">
+                        </a>
+                    </li>
+                    <li>
+                        <a title="" href="#">
+                            <img alt="" src="images/lunbo/alpha.png" id="banner3">
+                        </a>
+                    </li>
+                </ul>
+                <ul class="flex-direction-nav">
+                    <li><a class="flex-prev" href="javascript:;">Previous</a></li>
+                    <li><a class="flex-next" href="javascript:;">Next</a></li>
+                </ul>
+                <ol id="bannerCtrl" class="flex-control-nav flex-control-paging">
+                    <li><a>1</a></li>
+                    <li><a>2</a></li>
+                    <li><a>2</a></li>
+                </ol>
+            </div>
+        </div>
+        <div id="text-box">
+            <h1>Toup科技公司</h1>
+            <p>Toup科技公司，成立于2018年。自成立以来，Toup科技一直致力于成为“中国信息安全领域最值得信赖的服务商”，主要业务是为金融，运营商，电商，移动互联网，制造，物流等行业提供信息安全，应用加速，云服务等专业产品及服务。</p>
+            <p>成立于2018年，高端产品，服务大众</p>
+        </div>
+    </main>
+    <!-- 编辑区域 -->
+    <footer>
+        <div id="footer-p">
+            <p>版权所有严海峰.保留所有权利。</p>
+            <p>Toupzwh@qq.cn</p>
+        </div>
+    </footer>
+</body>
+
+<!-- js -->
+<!-- 导航栏下拉框 -->
+<script>
+    $(document).ready(function () {
+        $("#nav-btn").click(function () {
+            $("#nav-list").slideToggle("show");
+        });
+    });
+</script>
+<!--canvas背景-->
+<script src="js/nav-canvas.js"></script>
+
+<!-- body撑满 -->
+<script>
+    function maxBody() {
+        var thewindow = window.innerHeight;
+        var mybody = document.getElementById('myBody');
+        mybody.style.minHeight = thewindow + "px";
+        setTimeout(maxBody, 10);
+    }
+    maxBody();
+</script>
+<!-- 轮播 -->
+<script src="js/slider.js"></script>
+<script>
+    $(function () {
+        var bannerSlider = new Slider($('#banner_tabs'), {
+            time: 5000,
+            delay: 400,
+            event: 'hover',
+            auto: true,
+            mode: 'fade',
+            controller: $('#bannerCtrl'),
+            activeControllerCls: 'active'
+        });
+        $('#banner_tabs .flex-prev').click(function () {
+            bannerSlider.prev()
+        });
+        $('#banner_tabs .flex-next').click(function () {
+            bannerSlider.next()
+        });
+    })
+</script>
+<script>
+    function jishi() {
+        var imgBox = document.getElementById("img-box");
+        var imgBoxWidth = window.innerWidth;
+        imgBox.style.height = (imgBoxWidth * 0.38) + "px";
+        setTimeout(jishi, 10);
+    }
+    jishi();
+</script>
+
+<!-- 让text-box撑满除图片区域 -->
+<script>
+    function textBoxMan() {
+        var imgBox = document.getElementById("img-box");
+        var textBox = document.getElementById("text-box");
+        var winHeight = window.innerHeight;
+        var imgBoxHeight = (imgBox.style.height).substring(0, (imgBox.style.height).length - 2);
+        //console.log(imgBoxHeight);
+        textBox.style.height = winHeight - imgBoxHeight + "px";
+        //console.log(winHeight - imgBoxHeight)
+        setTimeout(textBoxMan, 10);
+    }
+    textBoxMan();
+</script>
+
+</html>

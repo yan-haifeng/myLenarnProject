@@ -1,0 +1,142 @@
+<!-- Toup概念网页模板 -->
+<!-- 作者：yhf -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>关于</title>
+    <link rel="stylesheet" href="css/Big_screen.css">
+    <link rel="stylesheet" href="css/About.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="js/jQuery.js"></script>
+    <script src="layui/layui.all.js"></script>
+    <script src="js/Tologin.js"></script>
+</head>
+
+<body id="myBody">
+    <header>
+        <div id="logo"><img src="Images/Logo/Logo.png" alt=""></div>
+        <nav id="Big-nav">
+            <ul id="Big-nav-ul">
+                <a href="index.html">
+                    <li>主页</li>
+                </a>
+                <a href="Services.html">
+                    <li>服务</li>
+                </a>
+                <a href="About.html">
+                    <li>关于</li>
+                </a>
+                <a href="Gallery.html">
+                    <li>商品</li>
+                </a>
+                <a href="founder.html">
+                    <li>团队</li>
+                </a>
+                <a href="#" id="a_login">
+                    <li id="li_login">登录</li>
+                </a>
+            </ul>
+        </nav>
+        <canvas id="nav-canvas"></canvas>
+    </header>
+    <!-- 编辑区域 -->
+    <main>
+        <div id="main">
+            <div id="leftbar"></div>
+            <div id="rightbar">
+                <p id="p3" class="animated bounceIn">公司简介</p>
+                <p class="animated lightSpeedIn">Toup科技股份有限公司成立于2018年，是以自主研发交换平台为基础面向重点行业进行应用软件开发并提供相应信息化解决方案与服务的供应商。自创立伊始，Toup科技一直以高新技术领域为起点，为客户提供具有行业领先水平的IT产品与解决方案。目前Toup科技在全国拥有7家子公司及1家分公司和逾千名高素质且实践经验丰富的员工。</p>
+                <p class="animated lightSpeedIn">经过开拓和积累，Toup科技在国内信息化建设领域尤其在银行业的金融系统已经拥有较高知名度和美誉度，“Toup科技”已树立起良好的品牌形象，为公司开拓新业务、开辟新领域、开发新市场并持续稳定发展奠定了基础。面对新挑战与新机遇，Toup人将继续本着“科技报国、服务社会”的理念，致力将Toup科技打造成为“中国信息化建设领域的领先企业！”</p>
+            </div>
+            <div id="bottombar">
+                <div id="bottombar-leftbar">
+                    <p id="p3" class="animated bounceIn">企业精神</p>
+                    <p class="animated bounceInLeft">团结是Toup存在与发展的基础。Toup是一个团结协作的整体，我们鼓励员工在互相尊重的基础上进行积极地交流与沟通，以实现利用集体的智慧与力量构筑紧密合作、相互信任的高质量团队的目标。</p>
+                    <p class="animated bounceInLeft">拚搏精神是推动Toup前进的动力。在追求Toup人共同理想的道路上，我们从不退缩。Toup欣赏员工在迎接挑战时所表现的智慧、毅力和满腔热情。顽强的拚搏精神将为Toup的每一位员工带来成功的喜悦。</p>
+                    <p class="animated bounceInLeft">创新是Toup生存与发展的灵魂。Toup旺盛的生命力来自创造性的思维与变革的观念。每一个不同的声音都可能激发Toup创新的灵感，我们理智、大胆的变革与实践，使Toup变得朝气蓬勃。</p>
+                </div>
+                <div id="bottombar-rightbar"></div>
+            </div>
+        </div>
+    </main>
+    <!-- 编辑区域 -->
+    <footer>
+        <div id="footer-p">
+            <p>版权所有朱文浩.保留所有权利。</p>
+            <p>Toupzwh@qq.cn</p>
+        </div>
+    </footer>
+</body>
+
+<!-- js -->
+<!-- 导航栏下拉框 -->
+<script>
+    $(document).ready(function () {
+        $("#nav-btn").click(function () {
+            $("#nav-list").slideToggle("show");
+        });
+    });
+</script>
+<!--canvas背景-->
+<script src="js/nav-canvas.js"></script>
+
+<!-- body撑满 -->
+<script>
+    function maxBody() {
+        var thewindow = window.innerHeight;
+        var mybody = document.getElementById('myBody');
+        mybody.style.minHeight = thewindow + "px";
+        setTimeout(maxBody, 10);
+    }
+    maxBody();
+</script>
+<!-- 图片撑满 -->
+<script>
+    function maxImg() {
+        var thewindowWidth = window.innerWidth;
+        var halfWindowHeigt = (window.innerHeight) * 0.5;
+        var theImg1 = document.getElementById('leftbar');
+        var theImg2 = document.getElementById('bottombar-rightbar');
+        var theBottombar = document.getElementById('bottombar');
+        if (thewindowWidth > 800) {
+            theImg1.style.height = halfWindowHeigt + "px";
+            theImg2.style.height = (halfWindowHeigt) + "px";
+            theBottombar.style.height = halfWindowHeigt + "px";
+            theImg1.style.minHeight = "406px";
+            theImg2.style.minHeight = "406px";
+            theBottombar.style.minHeight = "406px";
+        }
+        else {
+            theImg1.style.height = "auto";
+            theImg1.style.minHeight = "225px";
+        }
+        setTimeout(maxImg, 10);
+    }
+    maxImg();
+</script>
+<!-- 图片滚动 -->
+<script>
+    function imgRoll() {
+        var leftBar = document.getElementById('leftbar');
+        var rightbar = document.getElementById('bottombar-rightbar');
+        var imgPosition = (leftBar.style.backgroundPositionX).substring(0, (leftBar.style.backgroundPositionX).length - 2);
+        console.log(imgPosition)
+        if (window.innerWidth > 800) {
+            imgPosition++;
+        }
+        else {
+            imgPosition = 0;
+        }
+        leftBar.style.backgroundPositionX = imgPosition + "px";
+        rightbar.style.backgroundPositionX = imgPosition + "px";
+        setTimeout(imgRoll, 20);
+    }
+    imgRoll();
+</script>
+
+</html>

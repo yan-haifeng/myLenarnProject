@@ -1,0 +1,253 @@
+main{
+    padding-top:125px;
+    position: relative;
+    z-index: 0;
+}
+.clear::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+#tltie{
+    width: 100%;
+    height: 100px;
+}
+#tltie h1{
+    height: 100%;
+    font-size: 45px;
+    text-align: center;
+    line-height: 100px;
+}
+
+#imgText{
+    margin-top: 30px;
+    padding: 30px;
+    padding-right:0px;
+    margin-right: auto; 
+    padding-left:0px;
+    margin-left: auto; 
+    width: 1082px;
+}
+#imgText #imgText-box{
+    width: 250px;
+    height:150px;
+    margin: 45px;
+    margin-left: 60px;
+    float: left;
+}
+
+#imgText #imgText-box #imgbox{
+    height: 100%;
+    width: 25%;
+    float: left;
+    background-color: #f05e1a;
+    position: relative;
+    top:0px;
+    animation: boxXiahua 2s;
+}
+    @keyframes boxXiahua
+    {
+    from {top:-5000px;}
+    to {top:0px;}
+    }
+#imgText #imgText-box #imgbox i{
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#imgText #imgText-box #imgbox .myImg{
+    background-image: url(../Images/Services/ServicesImg.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#imgText #imgText-box #imgbox .img1{
+    background-position-y: 10px;
+}
+#imgText #imgText-box #imgbox .img2{
+    background-position-y: -60px;
+}
+#imgText #imgText-box #imgbox .img3{
+    background-position-y: -120px;
+}
+#imgText #imgText-box #imgbox .img4{
+    background-position-y: -180px;
+}
+#imgText #imgText-box #imgbox .img5{
+    background-position-y: -240px;
+}
+#imgText #imgText-box #imgbox .img6{
+    background-position-y: -300px;
+}
+
+#imgText #imgText-box #textbox{
+    position: relative;
+    width: 75%;
+    height: 80%;
+    float: left;
+    top:30px;
+    background-color: rgb(236, 232, 232);
+    opacity: 1;
+    animation: Appear 2s;
+}
+    @keyframes Appear{
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+#imgText #imgText-box #textbox a{
+    color: #000;
+    font-size: 16px;
+    margin: 10px;
+    margin-top:10px; 
+}
+
+#imgText #imgText-box #textbox p{
+    margin: 10px;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+#mainContent #Contentbox{
+    width: 80%;
+    height: 300px;
+    border: #ccc 1px solid;
+    margin: auto;
+    margin-top: 20px;
+    max-width: 966px;
+    
+}
+
+#mainContent #Contentbox #left1{
+    width: 35%;
+    height: 100%;
+    background-color: aqua;
+    float: left;
+}
+#mainContent #Contentbox #right2{
+    width: 35%;
+    height: 100%;
+    background-color: aqua;
+    float: right;
+}
+#mainContent #Contentbox img{
+    width: 100%;
+    height: 100%;
+}
+#mainContent #Contentbox #left2{
+    width: 65%;
+    height: 100%;
+    float: left;
+}
+#mainContent #Contentbox #right1{
+    width: 65%;
+    height: 100%;
+    float: right;
+}
+#mainContent #Contentbox h2{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+#mainContent #Contentbox p{
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: 20px;
+    color: #999;
+}
+#hideWindow{
+    display: none;
+}
+
+@media only screen and (max-width:830px){
+    #imgText{
+        max-width: 830px;
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+    #mainContent #Contentbox #left1{
+        display: none;
+    }
+    #mainContent #Contentbox #right2{
+        display: none;
+    }
+    #mainContent #Contentbox #left2{
+        float: none;
+        width: 100%;
+    }
+    #mainContent #Contentbox #right1{
+        float: none;
+        width: 100%;
+    }
+    #hideWindow{
+        display: none;
+    }
+}
+
+@media only screen and (max-width:690px){
+    #imgText{
+        max-width: none;
+        width: auto;
+    }
+    #imgText #imgText-box{
+        width: 100%;
+        float: none;
+        margin: auto;
+        margin-top:30px;
+    }
+    #imgText #imgText-box #imgbox{
+        width: 80px;
+    }
+    #imgText #imgText-box #textbox{
+        height: 100%;
+        top: 0px;
+    }
+    #mainContent #Contentbox{
+        display: none;
+    }
+
+    /* 隐藏窗口 */
+    #hideWindow{
+        top:0px;
+        position: fixed;
+        background-color: rgba(51, 51, 51, 0.4);
+        z-index: 9999;
+        display: none;
+    }
+    #hideWindow #ContentWindow{
+        position: absolute;
+        height: 70%;
+        width: 70%;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px #f05e1a solid;
+        top: 20%;
+        left: 15%;
+        border-radius: 30px;
+    }
+    #hideWindow #ContentWindow #exit{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        background-color: red;
+        width: 30px;
+        height: 30px;
+        border-radius: 100px;
+    }
+    #hideWindow #ContentWindow #Text{
+        position: absolute;
+        left: 10px;
+        top: 30px;
+    }
+    #hideWindow #ContentWindow #Text h2{
+        margin-top: 10px;
+    }
+    #hideWindow #ContentWindow #Text p{
+        margin-top: 10px;
+        font-size: 12px;
+    }
+}

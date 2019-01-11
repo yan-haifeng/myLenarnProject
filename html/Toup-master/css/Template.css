@@ -1,0 +1,54 @@
+body{
+    min-width: 1200px;
+}
+
+.leftbar{
+    float: left;
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+}
+
+.rightbar{
+    float: left;
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+}
+
+.imgview{
+    margin-top: 150px;
+    margin-left: 100px;
+    width: 400px;
+    height: 400px;
+    padding: 10px;
+    border: 1px solid #f40;
+}
+
+.imgview img{
+    width: 100%;
+    height: 100%;
+}
+
+.textview{
+    margin-top: 150px;
+    margin-left: 10px;
+    width: 500px;
+}
+.textview li{
+    margin-top: 20px;
+}
+
+.textview p,.textview h1{
+    display: inline;
+    margin-left: 10px;
+    color: #333333;
+}
+
+.textview p{
+    font-size: 12px;
+}
+
+#minusnum:hover,#addnum:hover{
+    border: #f05e1a solid 1px;
+}

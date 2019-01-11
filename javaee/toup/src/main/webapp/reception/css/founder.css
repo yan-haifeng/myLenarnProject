@@ -1,0 +1,232 @@
+main{
+    padding-top: 125px;
+}
+
+main #title{
+    height: 100px;
+}
+
+main #title p{
+    font-size: 50px;
+    text-align: center;
+}
+
+main #mybox{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    min-height: 400px;
+}
+main #mybox #box{
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+main #mybox #box #touxiang-Img{
+    position: relative;
+    width: 70%;
+    height: 70%;
+    border: 1px #000 solid;
+    border-radius: 50%;
+}
+main #mybox #box .Img1{
+    background-image: url(../Images/Team/zwh.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+main #mybox #box .Img2{
+    background-image: url(../Images/Team/yhf.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+main #mybox #box .Img3{
+    background-image: url(../Images/Team/zkw.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+main #mybox #box .Img4{
+    background-image: url(../Images/Team/ylh.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+/* 实现动画 */
+#touxiang-Img, #touxiang-Img::before, #touxiang-Img::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  #touxiang-Img::before, #touxiang-Img::after {
+      content: '';
+      z-index: -1;
+      margin: -5%;
+
+    }
+    #touxiang-Img:hover::before,#touxiang-Img:hover::after{
+        box-shadow: inset 0 0 0 2px;
+        animation: clipMe 8s linear infinite;
+    }
+    #touxiang-Img::before {
+      animation-delay: -4s;
+    }
+
+    @keyframes clipMe {
+      0%, 100% {
+        clip: rect(0px, 282.0px, 2px, 0px);
+      }
+      25% {
+        clip: rect(0px, 2px, 282.0px, 0px);
+      }
+      50% {
+        clip: rect(264px, 2px, 282.0px, 0px);
+      }
+      75% {
+        clip: rect(0px, 282.0px, 282.0px, 264px);
+      }
+    }
+  /* 动画结束 */
+main #mybox #box #recommend{
+    margin-top: 20px;
+    width: 70%;
+    height: 30%;
+}
+main #mybox #box #recommend h2{
+    margin-top: 10px;
+    text-align: center;
+}
+
+main #friend{
+    margin-top: 20px;
+}
+main #friend #friend-title{
+    text-align: center; 
+}
+main #friend #friend-title p{
+    font-size: 50px;
+}
+main #friend #friend-main{
+    width: 80%;
+    /* max-width: 740px; */
+    height: 500px;
+    margin: auto;
+}
+main #friend #friend-main ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+main #friend #friend-main ul li{
+    display: block;
+    width: 200px;
+    height: 120px;
+    
+}
+main #friend #friend-main ul #huawei{
+    background-image: url(../Images/Team/huawei.jpg);
+    background-size: 100% 100%;
+}
+main #friend #friend-main ul #sugon{
+    background-image: url(../Images/Team/sugon.jpg);
+    background-size: 100% 100%;
+}
+main #friend #friend-main ul #ibm{
+    background-image: url(../Images/Team/ibm.jpg);
+    background-size: 100% 100%;
+}
+main #friend #friend-main ul #inspur{
+    background-image: url(../Images/Team/insour.jpg);
+    background-size: 100% 100%;
+}
+main #friend #friend-main ul #lexmark{
+    background-image: url(../Images/Team/lexmark.jpg);
+    background-size: 100% 100%;
+}
+main #friend #friend-main ul #siemens{
+    background-image: url(../Images/Team/siemens.jpg);
+    background-size: 100% 100%;
+}
+main #friend #friend-main ul #ruijie{
+    background-image: url(../Images/Team/ruijie.jpg);
+    background-size: 100% 100%;
+}
+main #friend #friend-main ul #cisco{
+    background-image: url(../Images/Team/cisco.jpg);
+    background-size: 100% 100%;
+}
+main #friend #friend-main ul #lenovo{
+    background-image: url(../Images/Team/lenovo.jpg);
+    background-size: 100% 100%;
+}
+main #friend #friend-main ul #dell{
+    background-image: url(../Images/Team/dell.jpg);
+    background-size: 100% 100%;
+}
+main #friend #friend-main ul #h3c{
+    background-image: url(../Images/Team/h3c.jpg);
+    background-size: 100% 100%;
+}
+main #friend #friend-main ul #hp{
+    background-image: url(../Images/Team/hp.jpg);
+    background-size: 100% 100%;
+}
+@media only screen and (max-width:830px){
+    main #mybox{
+        display: block;
+    }
+    main #mybox #box{
+        margin: auto;
+    }
+}
+@media only screen and (max-width:690px){
+    main #mybox #box{
+        width: 100%;
+        height: 200px;
+        background-color: rgb(236, 232, 232);
+        display: block;
+        position: relative;
+    }
+    main #mybox #box #touxiang-Img{
+        margin-top: 20px;
+        margin-left: 20px;
+        width: 150px;
+        height: 150px;
+        position: absolute;
+    }
+    #touxiang-Img:hover::before,#touxiang-Img:hover::after{
+        box-shadow: inset 0 0 0 0px;
+        animation:0s;
+    }
+    main #mybox #box #recommend{
+        margin-top: 0px;
+        position: absolute;
+        left: 210px;
+        width: 50%;
+        top: 0px;
+    }
+    main #mybox #box #recommend h2{
+        text-align: left;
+    }
+    main #mybox .waiLiuBai{
+        margin-top: 70px !important;
+    }
+
+    main #friend #friend-main{
+        height: 720px;
+    }
+
+    main #friend #friend-main ul li{
+        width: 50%;
+    }
+}

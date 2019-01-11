@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100%;
+    position: relative;
+}
+a,li{
+    text-decoration: none;
+    list-style-type: none;
+}
+
+/* 导航栏 */
+header{
+    position: absolute;
+    width: 100%;
+    height: 125px;
+    background-color: rgba(51, 51, 51, 0.25);
+    top:0px;
+    z-index: 1000;
+}
+header #logo{
+    width: auto;
+    height: 80%;
+    display: inline-block;
+    position: absolute;
+    top:10%;
+    left: 100px;
+}
+header #logo img{
+    width: auto;
+    height: 100%;
+}
+header #Middle-nav{
+    display: none;
+}
+header #Big-nav{
+    width: 70%;
+    height: 100%;
+    float: right;
+}
+header #Big-nav ul{
+    width: 70%;
+    height: 100%;
+    float: right;
+    display: flex;
+    justify-content: space-around;
+}
+header #Big-nav ul a{
+    display: flex;
+    width: 20%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+    transition: background-color 1s;
+}
+header #Big-nav ul li{
+    display: inline-block;
+    line-height: 100%;
+    color: #fff;
+    font-weight: bold;
+}
+header #Big-nav ul a:hover{
+    background-color: rgba(51, 51, 51, 0.5);
+    /* border: #fff solid 1px; */
+    border-top: none;
+    border-bottom: none;
+}
+/* canvas */
+header #nav-canvas{
+    height: 125px;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index:-9999;
+}
+/* 主要 */
+main{
+    width: 100%;
+    /* height: 100%; */
+    /* min-height: 774px; */
+}
+
+/* 尾栏 */
+footer{
+    clear: both;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+footer #footer-p{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.4);
+}
+footer p{
+    height: 50%;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* 导航栏动画 */
+header{
+    animation:myTopTime 1s;
+}
+
+@keyframes myTopTime
+{
+from {top:-125px;}
+to {top:0px;}
+}
+
+footer{
+    animation:myBomTime 1s;
+}
+
+@keyframes myBomTime
+{
+    from {bottom: -75px;}
+    to {bottom: 0px;}
+}
+
+/* 底栏隐藏 */
+footer {
+    height: 10px;
+    overflow:hidden;
+    transition: height 0.5s;
+}
+footer p{
+    display: none;
+}
+footer:hover{
+    height: 75px;
+}
+footer:hover p{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+

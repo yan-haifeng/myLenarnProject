@@ -1,0 +1,164 @@
+<!-- Toup概念网页模板 -->
+<!-- 作者：yhf -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>团队</title>
+    <link rel="stylesheet" href="css/Big_screen.css">
+    <link rel="stylesheet" href="css/founder.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="js/jQuery.js"></script>
+    <script src="layui/layui.all.js"></script>
+    <script src="js/Tologin.js"></script>
+    <script src="js/wow.min.js"></script>
+</head>
+
+<body id="myBody">
+    <header>
+        <div id="logo"><img src="Images/Logo/Logo.png" alt=""></div>
+        <nav id="Big-nav">
+            <ul id="Big-nav-ul">
+                <a href="index.html">
+                    <li>主页</li>
+                </a>
+                <a href="Services.html">
+                    <li>服务</li>
+                </a>
+                <a href="About.html">
+                    <li>关于</li>
+                </a>
+                <a href="Gallery.html">
+                    <li>商品</li>
+                </a>
+                <a href="founder.html">
+                    <li>团队</li>
+                </a>
+                <a href="#" id="a_login">
+                    <li id="li_login">登录</li>
+                </a>
+            </ul>
+        </nav>
+        <canvas id="nav-canvas"></canvas>
+    </header>
+    <!-- 编辑区域 -->
+    <main>
+        <div id="title">
+            <p>我们的团队</p>
+        </div>
+        <div id="mybox">
+            <div id="box">
+                <div id="touxiang-Img" class="Img1 animated rotateInDownLeft"></div>
+                <div id="recommend">
+                    <h2>朱文浩</h2>
+                    <p>这是介绍这是介绍</p>
+                </div>
+            </div>
+            <div id="box">
+                <div id="touxiang-Img" class="Img2 animated rotateInDownRight"></div>
+                <div id="recommend">
+                    <h2>严海峰</h2>
+                    <p>这是介绍这是介绍</p>
+                </div>
+            </div>
+            <div id="box">
+                <div id="touxiang-Img" class="Img3 animated rotateInDownLeft"></div>
+                <div id="recommend">
+                    <h2>周凯文</h2>
+                    <p>这是介绍这是介绍</p>
+                </div>
+            </div>
+            <div id="box">
+                <div id="touxiang-Img" class="Img4 animated rotateInDownRight"></div>
+                <div id="recommend">
+                    <h2>叶凌豪</h2>
+                    <p>这是介绍这是介绍</p>
+                </div>
+            </div>
+        </div>
+        <div id="friend">
+            <div id="friend-title">
+                <p>合作伙伴</p>
+            </div>
+            <div id="friend-main">
+                <ul>
+                    <li id="huawei" class="wow slideInLeft"></li>
+                    <li id="sugon" class="wow slideInLeft"></li>
+                    <li id="ibm" class="wow slideInLeft"></li>
+                    <li id="inspur" class="wow slideInLeft"></li>
+                    <li id="lexmark" class="wow slideInLeft"></li>
+                    <li id="siemens" class="wow slideInLeft"></li>
+                    <li id="ruijie" class="wow slideInLeft"></li>
+                    <li id="cisco" class="wow slideInLeft"></li>
+                    <li id="lenovo" class="wow slideInLeft"></li>
+                    <li id="dell" class="wow slideInLeft"></li>
+                    <li id="h3c" class="wow slideInLeft"></li>
+                    <li id="hp" class="wow slideInLeft"></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <!-- 编辑区域 -->
+    <footer>
+        <div id="footer-p">
+            <p>版权所有严海峰.保留所有权利。</p>
+            <p>Toupzwh@qq.cn</p>
+        </div>
+    </footer>
+</body>
+
+<!-- js -->
+<!-- wow动画 -->
+<script>
+    var wow = new WOW({
+        boxClass: 'wow',
+        animateClass: 'animated',
+        offset: 0,
+        mobile: true,
+        live: true
+    });
+    wow.init();
+</script>
+<!-- 导航栏下拉框 -->
+<script>
+    $(document).ready(function () {
+        $("#nav-btn").click(function () {
+            $("#nav-list").slideToggle("show");
+        });
+    });
+</script>
+<!--canvas背景-->
+<script src="js/nav-canvas.js"></script>
+
+<!-- body撑满 -->
+<script>
+    function maxBody() {
+        var thewindow = window.innerHeight;
+        var mybody = document.getElementById('myBody');
+        mybody.style.minHeight = thewindow + "px";
+        setTimeout(maxBody, 10);
+    }
+    maxBody();
+</script>
+<!-- mybox撑满 -->
+<script>
+    function maxMybox() {
+        var thewindowWidth = window.innerWidth;
+        var thewindowHeight = window.innerHeight;
+        var myBox = document.getElementById('mybox');
+        if (thewindowWidth > 830) {
+            myBox.style.height = (thewindowHeight - 225) + "px";
+        } else {
+            myBox.style.height = "auto";
+        }
+        setTimeout(maxMybox, 10);
+    }
+    maxMybox();
+
+</script>
+
+</html>

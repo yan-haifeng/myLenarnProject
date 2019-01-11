@@ -1,0 +1,120 @@
+<!-- Toup概念网页模板 -->
+<!-- 作者：yhf -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品</title>
+    <link rel="stylesheet" href="css/Gallery.css">
+    <link rel="stylesheet" href="css/Big_screen.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="js/jQuery.js"></script>
+    <script src="layui/layui.all.js"></script>
+    <script src="js/Tologin.js"></script>
+</head>
+
+<body id="myBody">
+    <header>
+        <div id="logo"><img src="Images/Logo/Logo.png" alt=""></div>
+        <nav id="Big-nav">
+            <ul id="Big-nav-ul">
+                <a href="index.html">
+                    <li>主页</li>
+                </a>
+                <a href="Services.html">
+                    <li>服务</li>
+                </a>
+                <a href="About.html">
+                    <li>关于</li>
+                </a>
+                <a href="Gallery.html">
+                    <li>商品</li>
+                </a>
+                <a href="founder.html">
+                    <li>团队</li>
+                </a>
+                <a href="#" id="a_login">
+                    <li id="li_login">登录</li>
+                </a>
+            </ul>
+        </nav>
+        <canvas id="nav-canvas"></canvas>
+    </header>
+    <!-- 编辑区域 -->
+    <main>
+        <div id="main">
+            <div id="p-box">
+                <p id="p10">商品</p>
+                <p id="p11">这些是我们公司的商品</p>
+                <p id="p12">让我们来看看有些什么吧</p>
+            </div>
+
+            <div class="main-commoditybar">
+
+                <div class="clearfloat" id="conmoditflag"></div>
+            </div>
+
+        </div>
+    </main>
+    <div id="hideBox">
+        <div id="mainImg" class="">
+            <div id="exit"></div>
+        </div>
+    </div>
+    <!-- 编辑区域 -->
+    <footer>
+        <div id="footer-p">
+            <p>版权所有朱文浩.保留所有权利。</p>
+            <p>Toupzwh@qq.cn</p>
+        </div>
+    </footer>
+</body>
+
+<!-- js -->
+<!-- 导航栏下拉框 -->
+<script>
+    $(document).ready(function () {
+        $("#nav-btn").click(function () {
+            $("#nav-list").slideToggle("show");
+        });
+    });
+</script>
+<!--canvas背景-->
+<script src="js/nav-canvas.js"></script>
+
+<!-- body撑满 -->
+<script>
+    function maxBody() {
+        var thewindow = window.innerHeight;
+        var mybody = document.getElementById('myBody');
+        mybody.style.minHeight = thewindow + "px";
+        setTimeout(maxBody, 10);
+    }
+    maxBody();
+</script>
+<!-- ajax获取商品并添加div -->
+<script>
+    function putconmodit() {
+        $.ajax({
+            type: 'GET',
+            dataType: 'json',
+            data: 'getall=1',
+            url: 'http://localhost:8080/toup/goods',
+            success: function (data) {
+                console.log(data);
+                for (i = 0; i < (data.data).length; i++) {
+                    var mydata = data.data[i];
+                    var commoditywarm_chlid = "<a class='commoditywarm' href='Template.html?id=" + mydata.id + "'><div class='imgwarm'><img src='/img/" + mydata.goodsImgpath + "' alt=''></div><div class='textwarm'><p class='commodityname'>" + mydata.goodsName + "</p><p class='icon'>￥</p><p class='moneytext'>" + mydata.goodsPrice + "</p></div></a>";
+                    $("#conmoditflag").before(commoditywarm_chlid);
+                }
+            }
+        });
+    }
+    putconmodit();
+</script>
+
+</html>

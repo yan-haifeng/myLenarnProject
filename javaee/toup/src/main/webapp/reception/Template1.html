@@ -1,0 +1,223 @@
+<!-- Toup概念网页模板 -->
+<!-- 作者：yhf -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网页模板</title>
+    <link rel="stylesheet" href="css/Big_screen.css">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/Template.css">
+    <script src="js/jQuery.js"></script>
+    <script src="layui/layui.all.js"></script>
+    <script src="js/Tologin.js"></script>
+</head>
+
+<body id="myBody">
+    
+    <!-- 编辑区域 -->
+    <main>
+        <div class="leftbar">
+            <div class="imgview">
+                <img src="" id="goods_img">
+            </div>
+        </div>
+        <div class="rightbar">
+            <div class="textview">
+                <ul>
+                    <li>
+                        <h1 id="goods_name"></h1>
+                    </li>
+                    <li>
+                        <p>商品价格:</p>
+                        <p id="goods_price"></p>
+                    </li>
+                    <li>
+                        <p>库存：</p>
+                        <p id="goods_stock"></p>
+                    </li>
+                    <li>
+                        <p>产地：</p>
+                        <p id="goods_city"></p>
+                    </li>
+                    <li>
+                        <p>规格：</p>
+                        <p id="goods_specifications"></p>
+                    </li>
+                    <li>
+                        <p>厂家：</p>
+                        <p id="goods_manufacturer"></p>
+                    </li>
+                    <li>
+                        <p>生产日期：</p>
+                        <p id="goods_date"></p>
+                    </li>
+                    <li>
+                        <p>介绍:</p>
+                        <p id="goods_describe"></p>
+                    </li>
+                    <li>
+                        <p>购买数量：</p> <button class="layui-btn layui-btn-primary layui-btn-sm" id="minusnum"><i class="layui-icon">&#xe603;</i></button>
+                        <input type="text" name="title" class="layui-input" style="width:40px; height:28px; display:inline-block;"
+                            id="buyquantity" value="1">
+                        <button class="layui-btn layui-btn-primary layui-btn-sm" id="addnum"><i class="layui-icon">&#xe602;</i></button>
+                    </li>
+                    <li><button class="layui-btn" style="margin-left:10px; background-color:#f05e1a; width: 300px;" id="buy_button">购买</button></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <!-- 编辑区域 -->
+</body>
+
+<!-- js -->
+<!-- 拿到url中的参数 -->
+<script>
+    //1、location.search获取get请求的参数   获取到的数据，是以?开头的
+    var search = location.search;
+    //2、如果还想要获取确定的数据，可以解析字符串
+    function parse(search) {
+        //从第二个字符开始截取   ，获取到第二个开始后面所有的字符
+        var str = search.substring(1);
+        var result = {};
+        //分割字符串  -->产生字符串数组
+        var strs = str.split("&");
+        //遍历数组中的每一个元素
+        strs.forEach(function (v) {
+            //伪代码：v="age=18"
+            var keyvalue = v.split("=");
+            var name = keyvalue[0];
+            var value = keyvalue[1];
+            result[name] = value;
+        })
+        return result;
+    }
+
+    var r = parse(search);
+</script>
+<!-- 时间格式化 -->
+<script>
+    function timeStamp2String(time) {
+        var datetime = new Date();
+        datetime.setTime(time);
+        var year = datetime.getFullYear();
+        var month = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
+        var date = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
+        // var hour = datetime.getHours()< 10 ? "0" + datetime.getHours() : datetime.getHours();
+        // var minute = datetime.getMinutes()< 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
+        // var second = datetime.getSeconds()< 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
+        return year + "年" + month + "月" + date;
+        // +" "+hour+":"+minute+":"+second;
+    }
+</script>
+<!-- ajax获取数据 -->
+<script>
+
+    function getdata() {
+        $.ajax({
+            type: 'GET',
+            dataType: 'json',
+            data: 'id=' + r.id,
+            url: 'http://localhost:8080/toup/goods',
+            success: function (data) {
+                console.log(data.data[0]);
+                var goodsdate = timeStamp2String(data.data[0].goodsDate);
+                console.log(goodsdate);
+                $("#goods_img").attr('src', "/img/" + data.data[0].goodsImgpath);
+                $("#goods_name").text(data.data[0].goodsName);
+                $("#goods_price").text(data.data[0].goodsPrice);
+                $("#goods_stock").text(data.data[0].goodsStock);
+                $("#goods_city").text(data.data[0].goodsCity);
+                $("#goods_specifications").text(data.data[0].goodsSpecifications);
+                $("#goods_manufacturer").text(data.data[0].goodsManufacturer);
+                $("#goods_date").text(goodsdate);
+                $("#goods_describe").text(data.data[0].goodsDescribe);
+            }
+        });
+    }
+    getdata();
+</script>
+<!-- 导航栏下拉框 -->
+<script>
+    $(document).ready(function () {
+        $("#nav-btn").click(function () {
+            $("#nav-list").slideToggle("show");
+        });
+    });
+</script>
+<!--canvas背景-->
+<script src="js/nav-canvas.js"></script>
+
+<!-- body撑满 -->
+<script>
+    function maxBody() {
+        var thewindow = window.innerHeight;
+        var mybody = document.getElementById('myBody');
+        mybody.style.minHeight = thewindow + "px";
+        setTimeout(maxBody, 10);
+    }
+    maxBody();
+</script>
+<!-- 数量增加减少组件 -->
+<script>
+    //减少
+    var nums = document.getElementById("buyquantity").value;
+    $("#minusnum").click(function () {
+        if (nums > 0) {
+            nums--;
+        }
+        console.log(nums);
+        $("#buyquantity").val(nums);
+    });
+
+    //增加
+    $("#addnum").click(function () {
+        nums++;
+        console.log(nums);
+        $("#buyquantity").val(nums);
+    });
+</script>
+<!-- 购买商品事件 -->
+<script>
+    var login_username;
+    var goodsId = r.id;
+    var goods_nums = document.getElementById("buyquantity").value;
+    var layer = layui.layer;
+
+    $(function () {
+        $.ajax({
+            type: 'GET',
+            dataType: 'text',
+            url: 'http://localhost:8080/toup/user/islogin',
+            success: function (data) {
+                console.log(data);
+                login_username = data;
+                console.log(login_username);
+            }
+        });
+    });
+
+    $("#buy_button").click(function () {
+        if (login_username == "nologin") {
+            login();
+        } else {
+            $.ajax({
+                type: 'POST',
+                data:{ username: login_username, goodsid: goodsId ,goodsnums:goods_nums},
+                dataType: 'json',
+                url: 'http://localhost:8080/toup/order',
+                success: function (data) {
+                    if (data.code == 0) {
+                        //购买成功
+                        layer.msg('购买成功');
+                    }
+                }
+            });
+        }
+    });
+</script>
+
+</html>
